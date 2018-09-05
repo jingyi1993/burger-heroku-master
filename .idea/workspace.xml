@@ -35,8 +35,8 @@
       <file leaf-file-name="auth.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/actions/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="79">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -407,7 +407,7 @@
       <workItem from="1534881220085" duration="776000" />
       <workItem from="1535130410414" duration="119000" />
       <workItem from="1536085259381" duration="10511000" />
-      <workItem from="1536164068342" duration="6903000" />
+      <workItem from="1536164068342" duration="7322000" />
     </task>
     <task id="LOCAL-00001" summary="fixed bug for not allowing input">
       <created>1533767209387</created>
@@ -420,21 +420,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52902000" />
+    <option name="totallyTimeSpent" value="53321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22875299" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22875299" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50357425" side_tool="true" weight="0.16827586" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50436854" side_tool="true" weight="0.6317241" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49642575" visible="true" weight="0.19586207" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49563146" visible="true" weight="0.74344826" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -840,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="79">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
