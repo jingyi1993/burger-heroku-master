@@ -4,6 +4,7 @@ import Button from '../../components/UI/Button/Button';
 import Classes from './Auth.css'
 import * as actions from '../../store/actions/index';
 import {connect} from 'react-redux';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Auth extends Component {
     state ={
@@ -102,6 +103,7 @@ class Auth extends Component {
 
 
     render() {
+
         const formElementArray =[];
         for(let key in this.state.controls){
             formElementArray.push({
@@ -126,7 +128,7 @@ class Auth extends Component {
         //                 },
         //                 valid: false },
         // {id: password, ...}]
-        const form =formElementArray.map(formElement =>(
+        let form =formElementArray.map(formElement =>(
             <Input key={formElement.id}
                    elementtype={formElement.config.elementType}
                    elementconfig={formElement.config.elementConfig}
@@ -138,8 +140,25 @@ class Auth extends Component {
 
         ));
 
+        if(this.props.loading){
+            form = <Spinner/>
+        }
+
+        let errorMessage = null;
+        console.log('111',this.props.error);
+
+
+        if(this.props.error) {
+            errorMessage = (
+
+                <p> FAIL </p>
+            )
+        }
+
         return (
-            <div>
+            <div style={{textAlign:'center', color: 'red'}}>
+                {errorMessage}
+
                 <form className={Classes.Auth} onSubmit={this.submitHandler}>
                     {form}
                     <Button btnType = 'Success' > submit</Button>
@@ -166,10 +185,17 @@ class Auth extends Component {
 //
 //
 // export default connect(null, mapDispatchToProps)(Auth);
+
+const mapStateToProps = state =>{
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error,
+    }
+};
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password, isSignup))
     };
 };
 
-export default connect(null, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

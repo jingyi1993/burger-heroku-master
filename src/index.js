@@ -12,12 +12,12 @@ import auth from './store/reducer/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const rootReducer = combineReducers({
-//      burgerBuilder:burgerBuilder,
-//      auth: auth,
-// });
+const rootReducer = combineReducers({
+     burgerBuilder:burgerBuilder,
+     auth: auth,
+});
 
-const store = createStore(burgerBuilder, composeEnhancers(
+const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 
