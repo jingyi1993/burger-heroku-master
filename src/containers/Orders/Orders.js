@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 
 import Order from '../../components/Order/Order';
 import axios from '../../axios';
+import {connect} from 'react-redux';
 
 
 class Orders extends Component {
@@ -9,9 +10,9 @@ class Orders extends Component {
     state={
         orders:[],
         loading:true
-    }
+    };
     componentDidMount(){
-        axios.get('/orders.json')
+        axios.get('/orders.json?auth='+this.props.token)
             .then(res=>{
                 //turn the object res into array;
 
@@ -34,6 +35,17 @@ class Orders extends Component {
                     loading: false,
                 })
             })
+        // axios.get('https://randomuser.me/api' )
+        //     .then(res=>{
+        //         //turn the object res into array;
+        //
+        //
+        //         console.log('###',res);
+        //
+        //     })
+        //     .catch(err=>{
+        //         console.log(err);
+        //     })
     }
     render(){
         return(
@@ -59,5 +71,11 @@ class Orders extends Component {
     }
 }
 
+const mapStateToProps = state =>{
+    return {
+       token: state.auth.token
+    }
+};
 
-export default Orders;
+
+export default connect(mapStateToProps)(Orders);

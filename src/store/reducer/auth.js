@@ -17,6 +17,7 @@ const authSuccess = (state, action) => {
     return updateObject( state, {
         token: action.idToken,
         userId: action.userId,
+        userEmail: action.userEmail,
         error: null,
         loading: false
     } );
@@ -24,9 +25,16 @@ const authSuccess = (state, action) => {
 
 const authFail = (state, action) => {
     return updateObject( state, {
-        error: true,
+        error: action.error,
         loading: false
     });
+};
+
+const logOut = (state,action) =>{
+    return updateObject( state , {
+        token: null,
+        userID: null,
+    })
 };
 
 
@@ -36,6 +44,7 @@ const auth = ( state = initialState, action ) => {
         case actionTypes.AUTH_START: return authStart(state, action);
         case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
         case actionTypes.AUTH_FAIL: return authFail(state, action);
+        case actionTypes.LOG_OUT: return logOut(state, action);
         default:
             return state;
     }
