@@ -3,10 +3,10 @@ import Classes from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls =[
-    { label:'Salad', type:'salad'},
-    { label:'Bacon', type:'bacon'},
-    { label:'Cheese', type:'cheese'},
-    { label:'Meat', type:'meat'}
+    { label:'Salad', type:'salad', price: 0.5},
+    { label:'Bacon', type:'bacon' , price: 0.4},
+    { label:'Cheese', type:'cheese', price: 1.3},
+    { label:'Meat', type:'meat', price: 0.7}
 ];
 
 const buildControls = (props)=> {
@@ -14,11 +14,13 @@ const buildControls = (props)=> {
 
     return (
         <div className={Classes.BuildControls}>
-            <p>Current Price:<strong>{props.price.toFixed(2)}</strong></p>
+            <p><strong>Current Price:</strong><strong>{props.price.toFixed(2)}</strong></p>
 
             {controls.map(a => (
                     <BuildControl key={a.label}
+
                                   label={a.label}
+                                  price={a.price}
                                   ingredientAdded={() => props.ingredientAdded(a.type)}
                                   ingredientRemoved={() => props.ingredientRemoved(a.type)}
                                   disabledInfo={props.disabledInfo[a.type]}/>

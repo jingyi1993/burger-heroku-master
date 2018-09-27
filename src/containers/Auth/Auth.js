@@ -100,7 +100,12 @@ class Auth extends Component {
         this.setState(prevState => {
             return {isSignup: !prevState.isSignup};
         });
-    }
+    };
+
+    defaultSigninHandler = () =>{
+        // event.preventDefault();
+        this.props.onAuth('zzz@qq.com', '123456', false);
+    };
 
 
     render() {
@@ -167,18 +172,22 @@ class Auth extends Component {
             <div style={{textAlign:'center', color: 'red'}}>
                 {authRedirect}
                 {errorMessage}
+                <Button
+                    clicked={this.switchAuthModeHandler}
+                    btnType="Danger"> {this.state.isSignup ? 'SIGNUP' : 'SIGNIN'}</Button>
 
                 <form className={Classes.Auth} onSubmit={this.submitHandler}>
+
                     {form}
                     <Button btnType = 'Success' > submit</Button>
                     {/*<Button clicked = {this.switchAuthModeHandler}>SWITCH TO {this.state.isSignup?'SIGNIN':null}</Button>*/}
 
 
 
+
                 </form>
-                <Button
-                    clicked={this.switchAuthModeHandler}
-                    btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}</Button>
+
+                <Button btnType = 'Success' clicked={this.defaultSigninHandler}>Signin as a guest</Button>
 
 
             </div>
