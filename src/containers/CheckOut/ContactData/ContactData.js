@@ -5,6 +5,9 @@ import axios from '../../../axios';
 import  Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/input/input';
 import {connect} from 'react-redux';
+import Paypal from '../../../containers/paypal/paypal';
+import Modal from '../../../components/UI/Modal/Modal';
+
 
 class ContactData extends Component {
 
@@ -94,6 +97,7 @@ class ContactData extends Component {
             },
 
         spinner: false,
+        showModal: false
 
 
     };
@@ -124,7 +128,7 @@ class ContactData extends Component {
     OrderHandler = ()=>{
       console.log(this.props);
 
-          this.setState({spinner: true});
+          this.setState({spinner: true, showModal: true});
           // alert('continue!')
           //send data to backend;
         // const order ={
@@ -156,7 +160,7 @@ class ContactData extends Component {
                       spinner: false,
 
                   });
-                  this.props.history.push('/')
+                  // this.props.history.push('/paypal')
 
               })
               .catch( error => {
@@ -166,6 +170,9 @@ class ContactData extends Component {
                   })
               } );
 
+    };
+    closeModalHandler = () =>{
+        this.setState({showModal: false})
     };
 
     contactDataChangedHandler = (event,id) => {
@@ -262,6 +269,11 @@ class ContactData extends Component {
             <div>
               <h4 className={Classes.Title}>Enter your contact data</h4>
                 {form}
+                <Modal show={this.state.showModal} modalClosed={this.closeModalHandler} >
+                    <div className={Classes.paypal}>
+                    <Paypal />
+                    </div>
+                </Modal>
 
 
             </div>

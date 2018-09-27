@@ -3,6 +3,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import BackDrop from '../../UI/BackDrop/BackDrop';
 import Aux from '../../../hoc/Aux';
 import Classes from './SideDrawer.css';
+import Logo from '../../UI/Logo/Logo';
 
 const sideDrawer =(props)=>{
 
@@ -16,9 +17,12 @@ const sideDrawer =(props)=>{
         <BackDrop show={props.open} clicked={props.closed}/>
         <div className={attachedClasses.join(' ')}>
 
-            <div className={Classes.Logo}>Logo</div>
+            <Logo/>
             <nav >
-                <NavigationItems/>
+
+                <NavigationItems isAuthenticated={props.isAuthenticated}
+                                 userEmail={props.userEmail}
+                />
             </nav>
 
         </div>

@@ -27,18 +27,6 @@ const burger =(props)=>{
         //[,]
             .map((_,i)=>
             <BurgerIngredient key={igKey+i} type={igKey}/>)
-        //[<BurgerIngredient key={salad+0} type={salad} />,
-        // <BurgerIngredient key={salad+1} type={salad} ]
-
-        //output:
-        //[
-        // [<BurgerIngredient key={salad+0} type={salad} />,
-        // <BurgerIngredient key={salad+1} type={salad}/>],
-        // [<BurgerIngredient key={bacon+0} type={salad} />],
-        // [<BurgerIngredient key={cheese+0} type={salad} />],
-        // [<BurgerIngredient key={meat+0} type={salad} />]
-        // ]
-
     })
         .reduce((a,b)=>{
             return a.concat(b)

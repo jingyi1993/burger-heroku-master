@@ -9,6 +9,13 @@
 .Title {
     text-align: center;
 }
+.paypal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+
+}
 
 @media (min-width: 600px) {
     .ContactData {

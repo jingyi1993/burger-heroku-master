@@ -35,7 +35,9 @@ class layout extends Component{
             <Aux>
                 <SideDrawer
                     open={this.state.showSideDrawer}
-                    closed={this.sideDrawerClosedHandler} />
+                    closed={this.sideDrawerClosedHandler}
+                    isAuthenticated ={this.props.isAuthenticated}
+                    userEmail={this.props.userEmail}/>
                 <ToolBar drawerToggleClicked={this.sideDrawerToggleHandler}
                 isAuthenticated ={this.props.isAuthenticated}
                          userEmail={this.props.userEmail}/>
