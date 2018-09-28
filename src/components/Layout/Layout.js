@@ -9,8 +9,12 @@ import {connect} from 'react-redux';
 class layout extends Component{
 
     state={
-        showSideDrawer: false
+        showSideDrawer: false,
+
     };
+
+
+
 
     sideDrawerClosedHandler=( )=>{
         this.setState({
@@ -27,10 +31,50 @@ class layout extends Component{
         console.log(this.state.showSideDrawer)
     };
 
+    // trimUserNameHandle = (arr) =>{
+    //     let userNameF = [];
+    //     //[M,a,g,g,i,e,@,q,q,.,c,o,m]
+    //     for(let char of arr){
+    //
+    //         userNameF.push(char);
+    //         if(char === '@'){
+    //           break
+    //         }
+    //
+    //     }
+    //     return userNameF.join('');
+    //
+    // };
+
+
+
 
 
 
     render(){
+        //zz@qq.com
+        // let userEmail = this.props.userEmail;
+
+
+
+        // this.selectUserNameHandler(userEmail);
+        let userNameO = 'Maggie';
+
+        if(this.props.userEmail){
+            userNameO =this.props.userEmail.split('@')[0];
+
+
+        }
+        console.log('!!!!!!!',userNameO);
+
+
+
+
+
+
+
+
+
         return(
             <Aux>
                 <SideDrawer
@@ -40,7 +84,9 @@ class layout extends Component{
                     userEmail={this.props.userEmail}/>
                 <ToolBar drawerToggleClicked={this.sideDrawerToggleHandler}
                 isAuthenticated ={this.props.isAuthenticated}
-                         userEmail={this.props.userEmail}/>
+                         userEmail={this.props.userEmail}
+                         userName ={userNameO}
+                />
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>

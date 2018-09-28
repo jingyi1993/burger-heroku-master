@@ -20,7 +20,12 @@ const navigationItems =(props) =>(
         {/*{props.isAuthenticated*/}
             {/*?<NavigationItem> {props.userEmail}</NavigationItem>*/}
             {/*:null}*/}
-        <p className={Classes.UserEmail}>{props.userEmail}</p>
+
+        {props.isAuthenticated
+        ?<p className={Classes.UserEmail}>{props.userName}</p>
+        :null}
+
+
         
 
 

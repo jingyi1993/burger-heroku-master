@@ -104,7 +104,7 @@ class Auth extends Component {
 
     defaultSigninHandler = () =>{
         // event.preventDefault();
-        this.props.onAuth('zzz@qq.com', '123456', false);
+        this.props.onAuth('guest@qq.com', '123456', false);
     };
 
 

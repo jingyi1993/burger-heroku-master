@@ -14,6 +14,7 @@ const toolbar =(props)=>{
             <nav className={Classes.DeskTopOnly}>
                 <NavigationItems isAuthenticated={props.isAuthenticated}
                                  userEmail={props.userEmail}
+                                 userName={props.userName}
                                  />
             </nav>
         </header>
