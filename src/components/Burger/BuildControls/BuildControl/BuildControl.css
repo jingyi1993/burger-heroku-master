@@ -33,8 +33,11 @@
     padding: 10px;
     font-weight: bold;
     width: 80px;
+    font-family: fantasy;
 }
 .Price {
+    font-family: fantasy;
+    font-weight: bold;
     padding: 5px;
     width: 60px;
     margin-right:25px;
@@ -43,11 +46,13 @@
 .BuildControl .Less {
     background-color: #D39952;
     color: white;
+    font-family: fantasy;
 }
 
 .BuildControl .More {
     background-color: #8F5E1E;
     color: white;
+    font-family: fantasy;
 }
 
 .BuildControl .Less:hover, .BuildControl .Less:active {

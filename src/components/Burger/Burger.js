@@ -33,7 +33,7 @@ const burger =(props)=>{
         });
     // console.log(transformedIngredients);
     if(transformedIngredients.length===0){
-        transformedIngredients=<p>add!</p>
+        transformedIngredients=<p style={{fontFamily: 'fantasy'}}>add more?</p>
 
     }
     return(

@@ -85,6 +85,7 @@
 
 @media (min-width: 500px) {
     .NavigationItem {
+        font-family: fantasy;
         margin: 0;
         display: flex;
         height: 100%;
@@ -95,15 +96,15 @@
     .NavigationItem a {
         margin-top: 20px;
         height: 100%;
-        padding: 16px 10px;
+        padding: 0px 10px;
         border-bottom: 4px solid transparent;
     }
 
     .NavigationItem a:hover,
     .NavigationItem a:active
     .NavigationItem a.active {
-        background-color: #8F5C2C;
+        /*background-color: #8F5C2C;*/
         border-bottom: 4px solid transparent;
-        color: white;
+        color: #130601;
     }
 }

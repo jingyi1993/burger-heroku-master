@@ -14,7 +14,7 @@ const buildControls = (props)=> {
 
     return (
         <div className={Classes.BuildControls}>
-            <p><strong>Current Price:</strong><strong>{props.price.toFixed(2)}</strong></p>
+            <p style={{fontFamily:'inherit'}}><strong>Current Price:</strong><strong>{props.price.toFixed(2)}</strong></p>
 
             {controls.map(a => (
                     <BuildControl key={a.label}

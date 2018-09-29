@@ -18,8 +18,15 @@
 /*}*/
 .UserEmail {
     margin-top: 28px;
-    color:rosybrown;
+    color:#8F5C2C;
     padding-top: 5px;
+    padding-left: 11px;
+    font-family: fantasy;
+
+}
+
+.UserEmail:hover {
+    color: #130601;
 }
 
 @media (min-width: 500px) {
