@@ -14,6 +14,7 @@ class Orders extends Component {
     componentDidMount(){
         axios.get('/orders.json?auth='+this.props.token)
             .then(res=>{
+                console.log('order!!!',res.data);
                 //turn the object res into array;
 
                 const Orders =[];
@@ -28,6 +29,7 @@ class Orders extends Component {
                 this.setState({
                    loading: false,
                     orders:Orders,
+
                 })
             })
             .catch(err=>{
@@ -54,9 +56,11 @@ class Orders extends Component {
 
                     return(
                         <Order key={order.id}
-                               address={order.address}
+                               address={order.formData.street}
+                               name={order.formData.name}
                                price={order.price}
                                ingredients={order.ingredients}
+                               Date={order.Date}
                         />
                     )
                     }

@@ -10,6 +10,14 @@ import Modal from '../../../components/UI/Modal/Modal';
 
 
 class ContactData extends Component {
+    componentDidMount () {
+        console.log(this.props);
+    }
+
+    // componentDidMount () {
+    //     const date = new Date();
+    //     console.log(date);
+    // }
 
     state= {
         orderForm:{
@@ -92,12 +100,14 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false
-            }
-
             },
 
+
+            },
+        orderDate: null,
         spinner: false,
-        showModal: false
+        showModal: false,
+
 
 
     };
@@ -126,10 +136,21 @@ class ContactData extends Component {
     }
 
     OrderHandler = ()=>{
+
+            // let date = new Date().toDateString();
+            // console.log(date);
+
+            // this.setState({
+            //     oderDate: 'qwebjdf/ngm',
+            // });
+
+
       console.log(this.props);
 
           this.setState({spinner: true, showModal: true});
-          // alert('continue!')
+          console.log(this.state);
+
+        // alert('continue!')
           //send data to backend;
         // const order ={
         //    price: this.state.price
@@ -149,19 +170,17 @@ class ContactData extends Component {
               ingredients: this.props.ingredients,
               price: this.props.price,
               formData: formData,
-
+              Date: new Date().toDateString()
           };
-        console.log('@@@@',order.formData);
+             console.log('@@@@',order);
 
           axios.post( '/orders.json', order )
               .then( response => {
                   console.log(response);
                   this.setState({
                       spinner: false,
-
                   });
                   // this.props.history.push('/paypal')
-
               })
               .catch( error => {
                   console.log(error.response);
@@ -284,8 +303,8 @@ class ContactData extends Component {
 
 const mapStateToProps =state =>{
     return {
-        ingredients:state.ingredients,
-        price: state.price,
+        ingredients:state.burgerBuilder.ingredients,
+        price: state.burgerBuilder.price,
     }
 };
 

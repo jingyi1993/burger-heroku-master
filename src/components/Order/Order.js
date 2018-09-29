@@ -42,6 +42,12 @@ const Output = ingredients.map(key=>{
             <p>
                 Address: <strong> {props.address}</strong>
             </p>
+            <p>
+                Name: <strong> {props.name}</strong>
+            </p>
+            <p>
+                Date: <strong> {props.Date}</strong>
+            </p>
         </div>
     )
 
