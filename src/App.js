@@ -8,6 +8,7 @@ import Orders from './containers/Orders/Orders';
 import Auth from './containers/Auth/Auth';
 import Logout from './containers/Auth/Logout/Logout';
 import Paypal from './containers/paypal/paypal';
+import HomePage from './components/HomePage/HomePage';
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
                   <Route path="/checkout" component={Checkout} />
                   <Route path='/orders' exact component={Orders}/>
                   <Route path='/logout' exact component={Logout}/>
+                  <Route path='/Home' exact component ={HomePage}/>
                   {/*<Route path ='/paypal' exact component ={Paypal}/>*/}
 
 

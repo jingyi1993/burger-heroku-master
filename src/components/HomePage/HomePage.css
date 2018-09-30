@@ -1,0 +1,11 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+
+}
+
+subheader {
+    width: 100%;
+}
